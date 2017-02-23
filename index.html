@@ -135,102 +135,79 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!--testmonials-->
 		<!--start-portfolio-->
+		<div style="min-height: 655px;">
 		<div class="portfolio section s2">
 			<div class="container portfolio-head">
 				<h3> Atuação</h3>
 				<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-			</div>
-			<!-- start-portfolio-script-->
-			<script src="js/hover_pack.js"></script>
-			<script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
-			<script type="text/javascript">
-				$(function () {
-					var filterList = {
-						init: function () {
-						
-							// MixItUp plugin
-							// http://mixitup.io
-							$('#portfoliolist').mixitup({
-								targetSelector: '.portfolio',
-								filterSelector: '.filter',
-								effects: ['fade'],
-								easing: 'snap',
-							});				
-						
-						},
-			
-					};
-					// Run the show!
-					filterList.init();
-				});	
-			</script>
-			<!--//End-portfolio-script-->
-					<ul id="filters" class="clearfix">
-						<li><span class="filter active" data-filter="app card icon logo web">Todos</span></li>
-						<li><span class="filter" data-filter="app">Civil</span></li>
-						<li><span class="filter" data-filter="card">Trabalhista</span></li>
-						<li><span class="filter" data-filter="icon">Tributário</span></li>
+				<ul id="filters" class="clearfix">
+						<li><span id="a1" class="filter active" onclick="Lista()">Administrativo</span></li>
+						<li><span id="a2" class="filter" onclick="Civil()">Civil</span></li>
+						<li><span id="a3" class="filter" onclick="Trabalhista()">Trabalhista</span></li>
+						<li><span id="a4" class="filter" onclick="Tributario()">Tributário</span></li>
 					</ul>
-
-					<div id="portfoliolist">
-					<div class="portfolio logo1 mix_all" data-cat="logo" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<p>asgnusdnlgsd</p>
-		                </div>
-					</div>				
-					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p2.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>		
-					<div class="portfolio web mix_all" data-cat="web" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p3.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>				
-					<div class="portfolio icon mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p4.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>	
-					<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p5.png" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>			
-					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p6.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>	
-					<div class="portfolio card mix_all" data-cat="card" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p7.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>	
-					<div class="portfolio logo1 mix_all" data-cat="icon" style="display: inline-block; opacity: 1;">
-						<div class="portfolio-wrapper">		
-							<a data-toggle="modal" data-target=".bs-example-modal-md" href="#" class="b-link-stripe b-animate-go  thickbox">
-						     <img src="images/p8.jpg" /><div class="b-wrapper"><h2 class="b-animate b-from-left    b-delay03 "><img src="images/link-ico.png" alt=""/></h2>
-						  	</div></a>
-		                </div>
-					</div>		
-					<div class="clearfix"> </div>																																					
-				</div>
 				
-		</div>
+					
+					<div id="lista" >
+						<p>
+							justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+					</div>
+
+					<div id="civil" style="display: none;">
+						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div id="trabalhista" style="display: none;">
+						<p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+						</p>
+					</div>
+					<div id="tributario" style="display: none;">
+						<p>sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+						</p>
+					</div>
+			</div>
+			</div>
+			</div>
+				<script type="text/javascript">
+				function Mudarestado(el) {
+			        var display = document.getElementById(el).style.display;
+			        if(display == "none")
+			            document.getElementById(el).style.display = 'block';
+			        else
+			            document.getElementById(el).style.display = 'none';
+			    }
+
+			    function Lista (){
+			    	document.getElementById('trabalhista').style.display = 'none';
+			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('lista').style.display = 'block';
+			    }
+
+
+			    function Civil (){
+			    	document.getElementById('lista').style.display='none';
+			    	document.getElementById('trabalhista').style.display = 'none';
+			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('civil').style.display = 'block';			    	
+			    }
+			    
+			    function Trabalhista (){
+			    	document.getElementById('lista').style.display='none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('trabalhista').style.display = 'block';
+			    	
+			    }
+
+			    function Tributario (){
+			    	document.getElementById('lista').style.display='none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('trabalhista').style.display = 'none';
+			    	document.getElementById('tributario').style.display = 'block';
+			    	
+			    }
+				</script>			
 		<!--//End-portfolio-->
 		<!-- start-top-grids-->
 		<div style="min-height: 655px;">
@@ -258,18 +235,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 		<!-- //End-top-grids-->
 		
-		<!--start-model-box-->
-						<a data-toggle="modal" data-target=".bs-example-modal-md" href="#"> </a>
-						<div class="modal fade bs-example-modal-md light-box" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-						  <div class="modal-dialog modal-md">
-						    <div class="modal-content light-box-info">
-						    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="images/close.png" title="close" /></button>
-						     <h3>Place Yours content here</h3>
-						     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas orci et blandit dictum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque posuere diam et est hendrerit, eget sodales lectus tincidunt. Etiam suscipit orci sapien, at molestie lorem imperdiet vitae. Fusce nunc eros, congue non hendrerit sed, lobortis scelerisque magna. Ut in nunc sem. Integer bibendum enim et erat molestie, sed interdum nisl ultricies. In hac habitasse platea dictumst. Nullam sem diam, tincidunt dapibus tellus pulvinar, pulvinar tempus dui. Integer eu faucibus arcu. Duis adipiscing commodo ipsum dapibus elementum.</p>
-						    </div>
-						  </div>
-						</div>
-						<!--start-model-box-->
 		<!--start-contact-->
 		<div class="contact section s4">
 			<div class="container">
