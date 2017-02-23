@@ -81,7 +81,7 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 				<div class="col-lg-12 header-note">
 					<a href="#"><img src="images/logo.png" class= "img-responsive"/></a>
 					<br/>
-					<a id="s2" class="btn btn-primary big-btn" href="#">Apresentação <span></span></a>
+					<a class="btn btn-primary big-btn" onclick="rolar()">Apresentação <span></span></a>
 				</div>
 			</div>
 		</div>
@@ -165,11 +165,11 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 					</div>
 					</div>
 					
-					<!--<img src="images/real-estate-attorney.jpg" class="img-responsive" />-->
+					
 			</div>
 			</div>
 			
-			<img src="images/real-estate-attorney.jpg" class="img-responsive" />	
+			<img src="images/real-estate-attorney.jpg" class="img-responsive" id="atuacao" />	
 				<script type="text/javascript">
 				function Mudarestado(el) {
 			        var display = document.getElementById(el).style.display;
@@ -178,6 +178,16 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 			        else
 			            document.getElementById(el).style.display = 'none';
 			    }
+
+			    function rolar(){
+			    	console.log("Olá");
+
+			    	selectorHeight = $('.smint').height();
+					var goTo =  $('div.'+ "s2").offset().top -selectorHeight;
+
+					// Scroll the page to the desired position!
+					$("html, body").animate({ scrollTop: goTo }, 1000);
+				}
 
 			    function Lista (){
 			    	document.getElementById('trabalhista').style.display = 'none';
@@ -241,6 +251,7 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 		<div class="contact section s4">
 			<div class="container">
 				<h4>Contato</h4>
+				<button type="button" onclick="rolar()">Teste</button>
 				<p class="contact-head">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
 				<div class="row" style="font-size: 10pt; color: #102A50;">
 					<div class="col-md-6" style="font-family:arial;">
