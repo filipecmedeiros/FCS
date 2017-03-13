@@ -104,6 +104,7 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
+
 					/*
 					 * Include the Post-Format-specific template for the content.
 					 * If you want to override this in a child theme, then include a file
@@ -114,8 +115,8 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 				endwhile;
 
 				the_posts_pagination( array(
-					'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+					'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>',
 					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
 				) );
 
@@ -156,8 +157,10 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 				<ul id="filters" class="clearfix">
 						<li><span id="a1" class="filter active" onclick="Lista()">Áreas</span></li>
 						<li><span id="a2" class="filter" onclick="Civil()">Civil</span></li>
-						<li><span id="a3" class="filter" onclick="Trabalhista()">Trabalhista</span></li>
-						<li><span id="a4" class="filter" onclick="Tributario()">Tributário</span></li>
+						<li><span id="a3" class="filter" onclick="Consumidor()">Consumidor</span></li>
+						<li><span id="a3" class="filter" onclick="Penal()">Penal</span></li>
+						<li><span id="a4" class="filter" onclick="Trabalhista()">Trabalhista</span></li>
+						<li><span id="a5" class="filter" onclick="Previdenciario()">Previdenciário</span></li>
 					</ul>
 				
 					<div style="min-height: 140px;">
@@ -170,11 +173,17 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 					<div id="civil" style="display: none;">
 						<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
 					</div>
+					<div id="consumidor" style="display: none;">
+						<p>Lorem ipsum dolor sit amet.</p>
+					</div>
+					<div id="penal" style="display: none;">
+						<p>Sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren.</p>
+					</div>
 					<div id="trabalhista" style="display: none;">
-						<p>sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+						<p>Labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
 						</p>
 					</div>
-					<div id="tributario" style="display: none;">
+					<div id="previdenciario" style="display: none;">
 						<p>sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
 						</p>
 					</div>
@@ -206,33 +215,55 @@ url: https://github.com/filipecmedeiros/Ferreira-Costa-Silva-
 
 			    function Lista (){
 			    	document.getElementById('trabalhista').style.display = 'none';
-			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'none';
 			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'none';
 			    	document.getElementById('lista').style.display = 'block';
 			    }
 
 
 			    function Civil (){
-			    	document.getElementById('lista').style.display='none';
 			    	document.getElementById('trabalhista').style.display = 'none';
-			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'none';
+			    	document.getElementById('lista').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'none';
 			    	document.getElementById('civil').style.display = 'block';			    	
+			    }
+			    function Consumidor (){
+			    	document.getElementById('trabalhista').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('lista').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'block';			    	
+			    }
+			    function Penal (){
+			    	document.getElementById('trabalhista').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'none';
+			    	document.getElementById('lista').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'block';
 			    }
 
 			    function Trabalhista (){
-			    	document.getElementById('lista').style.display='none';
+			    	document.getElementById('lista').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'none';
 			    	document.getElementById('civil').style.display = 'none';
-			    	document.getElementById('tributario').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'none';
 			    	document.getElementById('trabalhista').style.display = 'block';
-			    	
 			    }
 
-			    function Tributario (){
-			    	document.getElementById('lista').style.display='none';
-			    	document.getElementById('civil').style.display = 'none';
+			    function Previdenciario (){
 			    	document.getElementById('trabalhista').style.display = 'none';
-			    	document.getElementById('tributario').style.display = 'block';
-			    	
+			    	document.getElementById('lista').style.display = 'none';
+			    	document.getElementById('civil').style.display = 'none';
+			    	document.getElementById('consumidor').style.display = 'none';
+			    	document.getElementById('penal').style.display = 'none';
+			    	document.getElementById('previdenciario').style.display = 'block';
 			    }
 				</script>			
 		<!--//End-portfolio-->

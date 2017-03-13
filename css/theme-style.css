@@ -453,7 +453,7 @@ p.m_5 {
 	outline:none;
 }
 .text-box input[type="text"]:hover,.textarea textarea:hover,.text-box input[type="text"]:focus,.textarea textarea:focus{
-	border-color: #9B9D9F;
+	border-color: #102A50;
 }
 .textarea textarea{
 	height: 205px;
@@ -540,7 +540,7 @@ p.m_5 {
 	text-decoration:none;
 }
 .copy-right a:hover{
-	color: #858585;
+	color: #102A50;
 }
 /*----start-light-box---*/
 .light-box-info {
