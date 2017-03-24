@@ -20,6 +20,6 @@ def post (request, slug):
 def post_list (request):
 	
 	context = {
-		'posts' : Post.objects.all(),
+		'posts' : Post.objects.all().order_by('-id'),
 	}
 	return render(request, 'post_list.html', context)
