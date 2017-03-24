@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+    {% for post in posts %}
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Blog Post Content Column -->
+                <div class="col-lg-8">
+
+                    <!-- Title -->
+                    <h1>{{ post.title }}</h1>
+
+                    <!-- Author -->
+                    <p class="lead">por {{ post.author.name }}</a></p>
+                    <hr>
+                    <!-- Date/Time -->
+                    <p>{{ post.created }}</p>
+                    <hr>
+                    <hr>
+                    <!-- Post Content -->
+                    <p>{{ post.container }}</p>
+                    <hr>
+                </div>
+                            
+            </div>
+            <!-- /.row -->
+
+            <hr>
+        </div>
+    {% endfor %}
+{% endblock %}

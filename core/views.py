@@ -10,3 +10,16 @@ def index (request):
 		'post3' : posts[2],
 	}
 	return render(request, 'index.html', context)
+
+def post (request, slug):
+	context = {
+		'post' : Post.objects.get(slug=slug),
+	}
+	return render (request, 'post.html', context)
+
+def post_list (request):
+	
+	context = {
+		'posts' : Post.objects.all(),
+	}
+	return render(request, 'post_list.html', context)

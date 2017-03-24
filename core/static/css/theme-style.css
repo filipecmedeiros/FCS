@@ -10,6 +10,16 @@ html, body{
 	-moz-transition: 0.5s all;
 	-o-transition: 0.5s all;
  }
+
+.resume {
+	height: 140px;
+    display: inline-block;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    direction: ltr;
+}
+
 .header-note{
 	text-align:center;
 	padding: 5%;
@@ -411,7 +421,6 @@ p.m_5 {
 }
 .caption h3{
 	font-weight: 700;
-	text-shadow: none;
 }
 .caption p{
 	text-shadow:none;
@@ -789,5 +798,7 @@ p.m_5 {
 		padding:0;
 	}
 }
+
+
 /*----//End-mediaquries-for-320px-----*/
 /*------//End-Media-quries------*/
