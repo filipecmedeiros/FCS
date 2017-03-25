@@ -4,12 +4,7 @@ html, body{
     font-size: 100%;
     background-color: #FFF;
 }
- body a{
- 	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
- }
+
 
 .resume {
 	height: 140px;
@@ -543,9 +538,7 @@ p.m_5 {
 	line-height: 1.5em;
 	text-align: center;
 }
-.copy-right span,.copy-right a{
-	color:#9B9D9F;
-}
+
 .copy-right a{
 	margin:0 0.2em;
 	text-decoration:none;
@@ -798,7 +791,6 @@ p.m_5 {
 		padding:0;
 	}
 }
-
 
 /*----//End-mediaquries-for-320px-----*/
 /*------//End-Media-quries------*/
