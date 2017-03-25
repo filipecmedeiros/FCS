@@ -35,7 +35,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post1.slug %}"><h3>{{ post1.title }}</h3></a>
  			                	<div class="resume">
-    								<p>{{ post1.container }}</p>		
+    								<p>{{ post1.container | safe}}</p>		
 								</div>
  			                </div>
  			            </div>
@@ -44,7 +44,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post2.slug %}"><h3>{{ post2.title }} </h3></a>
  			                  <div class="resume">
- 			                  	<p>{{ post2.container }}</p>
+ 			                  	<p>{{ post2.container | safe}}</p>
  			                  </div>
  			                </div>
  			            </div>
@@ -52,7 +52,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post3.slug %}"><h3>{{ post3.title }}</h3></a>
  			                  <div class="resume">
- 			                  	<p>{{ post3.container }}</p>
+ 			                  	<p>{{ post3.container | safe}}</p>
  			                  </div>
  			                </div>
  			            </div>
