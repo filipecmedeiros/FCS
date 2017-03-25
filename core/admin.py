@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
 
@@ -12,7 +13,7 @@ class CategoryAdmin (admin.ModelAdmin):
 	list_display = ['name', 'slug']
 	search_fields = ['name', 'slug']
 
-class PostAdmin (admin.ModelAdmin):
+class PostAdmin (SummernoteModelAdmin):
 	list_display = ['title', 'slug', 'author', 'category', 'container', 'created', 'modified']
 	search_fields = ['title', 'slug']
 	list_filter = ['created', 'modified']

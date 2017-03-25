@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Post
 # Create your views here.
 def index (request):
-	posts = Post.objects.all()
+	posts = Post.objects.all().order_by('-id')
 	context = {
 		'post1' : posts[0],
 		'post2' : posts[1],

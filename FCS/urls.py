@@ -21,6 +21,7 @@ from core import views
 urlpatterns = [
 	url(r'^$', views.index, name='index'),
     url(r'^posts/$', views.post_list, name='post_list'),
+    url(r'^summernote/', include('django_summernote.urls')),
     url(r'^post/', include('core.urls', namespace='core')),
     url(r'^admin/', admin.site.urls),
 ]
