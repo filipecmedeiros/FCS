@@ -1,5 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %}
+    {{ post.title }} | {{ block.super }}
+{% endblock %}
+
 {% block container %}
     <div class="container">
 
