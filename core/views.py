@@ -30,7 +30,7 @@ def doubtView (request):
 	return render (request, 'doubt.html', context)
 
 class PostListView (generic.ListView):
-	queryset = Post.objects.all().order_by('-date')
+	queryset = Post.objects.all().order_by('-created')
 	model = Post
 	template_name = 'post_list.html'
 	context_object_name = 'posts'
