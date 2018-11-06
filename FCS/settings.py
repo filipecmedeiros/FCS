@@ -41,6 +41,7 @@ INSTALLED_APPS = [
 
     #libs
     'django_summernote',
+    'widget_tweaks',
 
     #apps
     'core',
@@ -136,6 +137,16 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 ALLOWED_HOSTS = ['*']
 
 STATIC_ROOT = os.path.join( PROJECT_ROOT, 'staticfiles')
+
+#E-mail
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER= 'duvidasfcs@gmail.com'
+#EMAIL_HOST_PASSWORD = ''
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_TO = 'aferreira@fcs.adv.br'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 
 try:
     from .local_settings import *

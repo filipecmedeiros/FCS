@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 {% block container %}
 		<div class="head-bg sTop">
 			<div class="container">
@@ -35,7 +37,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post1.slug %}" style="color:#FFF"><h3>{{ post1.title }}</h3></a>
  			                	<div class="resume">
-    								<p>{{ post1.container | safe}}</p>		
+    								<p>{{ post1.container | safe | truncatewords:22}}</p>		
 								</div>
  			                </div>
  			            </div>
@@ -44,7 +46,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post2.slug %}" style="color:#FFF"><h3>{{ post2.title }} </h3></a>
  			                  <div class="resume">
- 			                  	<p>{{ post2.container | safe}}</p>
+ 			                  	<p>{{ post2.container | safe | truncatewords:22}}</p>
  			                  </div>
  			                </div>
  			            </div>
@@ -52,7 +54,7 @@
  			                <div class="carousel-caption caption">
  			                  <a href="{% url 'core:post' post3.slug %}"style="color:#FFF"><h3>{{ post3.title }}</h3></a>
  			                  <div class="resume">
- 			                  	<p>{{ post3.container | safe}}</p>
+ 			                  	<p>{{ post3.container | safe | truncatewords:22}}</p>
  			                  </div>
  			                </div>
  			            </div>
@@ -60,18 +62,63 @@
   			        </div>
 			        <!-- Carousel nav -->
  			    </div>
- 			    <a class="btn btn-primary btn-red" href="{% url 'post_list' %}">Mais notícias</a>
+ 			    <a class="btn btn-primary btn-red" href="{% url 'post_list' %}" style="margin-top:50px;">Mais notícias</a>
  		</div>
 		</div>
  		</div>
 		<!--testmonials-->
 		
+
+		<div class="portfolio" style="min-height: 655px;">
+		<div class="duvidas container s2" >
+			<h1 style="text-align:center;padding:1em; color: #102a50">Mande sua dúvida!</h1>
+			<div class="row  section top-grids">
+				{% if success %}
+					<div class="alert alert-success">
+						Mensagem enviada com sucesso!
+					</div>
+				{% endif %}
+				<form class="form-horizontal" action="" method="post">
+					<fieldset>
+						{% csrf_token %}
+						{% for field in form %}
+							<div class="form-group {% if field.errors %} has-errors {% endif %}">
+						      <label for="{{field.auto_id }}" class="col-md-3 control-label">{{ field.label }}</label>
+						      <div class="col-md-9">
+						        {% render_field field class='form-control' %}
+						      	{% for error in field.errors %}
+						      		<span class="help-block">{{error}}</span>
+						      	{% endfor %}
+						      </div>
+						    </div>
+						{% endfor %}	
+					    
+					    
+						<div class="form-group">
+					      <div class="col-md-9 col-md-offset-3">
+					        <button type="submit" class="btn btn-primary btn-red">Enviar</button>
+					      </div>
+					    </div>
+					</fieldset>
+				</form>
+				</div>
+
+				<div class="clearfix"> </div>
+				
+			</div>
+		</div>
+		</div>
+		<!-- //End-top-grids-->
+
+
+
 		<!-- start-top-grids-->
 		<div style="min-height: 655px;">
-		<div class="equipe container s2" >
+		<div class="equipe container s3" >
 			<h1 style="text-align:center;padding:1em; color: #102a50">Quem Somos</h1>
 			<div class="row  section top-grids">
-				<div class="col-md-6 top-grid" style="text-align: left; font-size:14px;">
+				<div class="col-lg-2 col-md-2"></div>
+				<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 top-grid" style="text-align: justify; font-size:14px;">
 					<p>Fundado em maio de 2015, inicialmente sob a razão social Félix, Ferreira, Costa e Silva Advogados Associados, o escritório, no final de 2016, diante de uma alteração societária, passou a ter a denominação de Ferreira, Costa e Silva Advogados Associados.</p>
 					<p>O #FCS tem como objetivo primordial garantir os direitos de seus clientes, baseando suas ações sempre na ética e nos princípios legais.</p>
  					<p>Nossa filosofia de trabalho proporciona resultados excelentes, com soluções adequadas àqueles que buscam acesso à justiça.</p>
@@ -80,9 +127,7 @@
  					<p>Atuamos nas áreas civil, consumerista, penal, trabalhista e previdenciário, garantindo a nossos clientes um trabalho preciso, dinâmico e personalizado, por meio de uma equipe experiente, e atenta aos novos conceitos jurídicos e em constante atualização.</p>
  					<p>O #FCS cresce a cada ano e espera se consolidar no cenário nacional, tornando-se um dos principais escritórios de advocacia do país.</p>
 				</div>
-				<div class="col-md-6 top-grid">
-					<img src="{% static 'images/p2.jpg' %}" class="img-responsive"/>
-				</div>
+				<div class="col-lg-2 col-md-2"></div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -90,7 +135,7 @@
 		<!-- //End-top-grids-->
 
 		<!--start-portfolio-->
-		<div class="portfolio section s3">
+		<div class="portfolio section s4">
 			<div class="container portfolio-head">
 				<h3> Atuação</h3>
 				<br/>
@@ -218,10 +263,10 @@
 		<!--//End-portfolio-->
 		<!-- start-top-grids-->
 		<div style="min-height: 655px;">
-		<div class="equipe container s4" >
+		<div class="equipe container s5" >
 			<h1 style="text-align:center;padding:1em; color: #102A50">Equipe</h1>
 			<div class="row  section top-grids">
-				<div class="col-md-3 top-grid">
+				<div class="col-md-4 top-grid">
 					<span class="icon1"> </span>
 					<h2>Augusto Cesar Silva Ferreira</h2>
 					<p>
@@ -235,7 +280,7 @@
 					E-mail: aferreira@fcs.adv.br
 					</p>
 				</div>
-				<div class="col-md-3 top-grid">
+				<div class="col-md-4 top-grid">
 					<span class="icon2"> </span>
 					<h2>Maurílio Sergio Silva Filho</h2>
 					<p>
@@ -249,7 +294,7 @@
 					E-mail: msilva@fcs.adv.br
 					</p>
 				</div>
-				<div class="col-md-3 top-grid">
+				<div class="col-md-4 top-grid">
 					<span class="icon3"> </span>
 					<h2>Rodrigo Jose Silva Costa</h2>
 					<p>
@@ -263,14 +308,6 @@
 					E-mail: rcosta@fcs.adv.br
 					</p>
 				</div>
-				<div class="col-md-3 top-grid">
-					<span class="icon4"> </span>
-					<h2>Janaina Camilo Ferreira</h2>
-					<p>Graduanda em Ciências Contábeis pela Faculdade Boa Viagem.
-					<br/>
-					E-mail: jferreira@fcs.adv.br
-					</p>
-				</div>
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -278,17 +315,16 @@
 		<!-- //End-top-grids-->
 		
 		<!--start-contact-->
-		<div class="contact section s5" style="min-height: 655px;">
+		<div class="contact section s6" style="min-height: 655px;">
 			<div class="container">
 				<h4>Contato</h4>
 				<p class="contact-head"><br/></p>
 				<div class="row" style="font-size: 10pt; color: #102A50;">
 					<div class="col-md-6" style="font-family:arial; margin-top: 5%;">
-						
 						<p>Endereço: <br/>
-						Rua José Paraíso, nº 210 <br/>
-						Boa Viagem, Recife/PE, CEP: 51030-390 <br/>
-						Empresarial JCAB, 2º andar, Sala 07 <br/>
+						Rua Coronel Waldemar Basgal, nº 158<br/>
+						Piedade, Jaboatão dos Guararapes/PE, CEP:54400-170 <br/>
+						Priori Corporate Center, 2º andar, Sala 211 <br/>
 						<br/><br/>
 						Telefone: (81) 3343-4032 <br/>
 						E-mail: aferreira@fcs.adv.br

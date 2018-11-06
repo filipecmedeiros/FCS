@@ -1,25 +1,39 @@
 from django.shortcuts import render
+from django.views import generic
 
 from .models import Post
+from .forms import DoubtForm
+
 # Create your views here.
+
 def index (request):
+	success = False
+	form = DoubtForm(request.POST or None)
+	if form.is_valid():
+		success = form.send_mail()
+
 	posts = Post.objects.all().order_by('-id')
+
 	context = {
 		'post1' : posts[0],
 		'post2' : posts[1],
 		'post3' : posts[2],
+		'form'	: form,
+		'success': success, 
 	}
 	return render(request, 'index.html', context)
+
+class PostListView (generic.ListView):
+	queryset = Post.objects.all().reverse()
+	model = Post
+	template_name = 'post_list.html'
+	context_object_name = 'posts'
+	paginate_by = 10
+
+post_list = PostListView.as_view()
 
 def post (request, slug):
 	context = {
 		'post' : Post.objects.get(slug=slug),
 	}
 	return render (request, 'post.html', context)
-
-def post_list (request):
-	
-	context = {
-		'posts' : Post.objects.all().order_by('-id'),
-	}
-	return render(request, 'post_list.html', context)

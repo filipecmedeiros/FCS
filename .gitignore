@@ -1,1 +1,4 @@
 FCS/local_settings.py
+venv/
+*.pyc
+__pycache__/
