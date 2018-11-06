@@ -139,8 +139,8 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join( PROJECT_ROOT, 'staticfiles')
 
 #E-mail
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER= 'duvidasfcs@gmail.com'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER= 'app65799268@heroku.com'
 #EMAIL_HOST_PASSWORD = ''
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_TO = 'aferreira@fcs.adv.br'
