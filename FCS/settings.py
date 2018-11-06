@@ -139,9 +139,9 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = os.path.join( PROJECT_ROOT, 'staticfiles')
 
 #E-mail
-EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER= 'duvidasfcs@gmail.com'
-#EMAIL_HOST_PASSWORD = ''
+EMAIL_HOST_PASSWORD = '172839xxx'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 EMAIL_TO = 'duvidasfcs@gmail.com'
 EMAIL_PORT = 587
